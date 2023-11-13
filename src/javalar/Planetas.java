@@ -13,14 +13,50 @@ public abstract class Planetas implements Mover {
 	protected int indicePosAtual = 0;
 	protected int xInicial;
 	protected int yInicial;
-	
-	
+
+	public Planetas() {
+
+	}
+
+	public int getxInicial() {
+		return xInicial;
+	}
+
+	public int getyInicial() {
+		return yInicial;
+	}
+
 	public int[][] getOrbitaPermitida() {
 		return orbitaPermitida;
 	}
 
-	public void setOrbitaPermitida(int[][] orbitaPermitida) {
-		this.orbitaPermitida = orbitaPermitida;
+	public void setOrbitaPermitida(int distanciaDaEstrela) {
+
+		int[][] orbita = new int[distanciaDaEstrela * 8][2];
+
+		int xInicial = this.xInicial;
+		int yInicial = this.yInicial;
+
+		for (int i = 0; i < distanciaDaEstrela * 8; i++) {
+			orbita[i][0] = xInicial;
+			orbita[i][1] = yInicial;
+
+			if (i < (1 * distanciaDaEstrela)) {
+				xInicial--;
+			} else if (i < (3 * distanciaDaEstrela)) {
+				yInicial--;
+			} else if (i < (5 * distanciaDaEstrela)) {
+				xInicial++;
+			} else if (i < (7 * distanciaDaEstrela)) {
+				yInicial++;
+			} else {
+				xInicial--;
+			}
+
+		}
+
+		this.orbitaPermitida = orbita;
+
 	}
 
 	public int getIndicePosAtual() {
@@ -71,10 +107,6 @@ public abstract class Planetas implements Mover {
 		this.bugsCont = bugsCont;
 	}
 
-	public Planetas() {
-
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -116,21 +148,19 @@ public abstract class Planetas implements Mover {
 	}
 
 	public void mover(int instantes) {
-		
-		for(int i = 0; i < instantes; i++) {
-			
+
+		for (int i = 0; i < instantes; i++) {
+
 			indicePosAtual = (indicePosAtual + getVelocidade()) % orbitaPermitida.length;
 			setPosicao(orbitaPermitida[indicePosAtual]);
-			
-			
-			if(getPosicaoX() == getXInicial() && getPosicaoY() == getYInicial() ) {
-				
+
+			if (getPosicaoX() == getXInicial() && getPosicaoY() == getYInicial()) {
+
 				anos++;
 			}
-			
+
 		}
-		
+
 	}
-	
 
 }
