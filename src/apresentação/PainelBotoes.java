@@ -3,10 +3,12 @@ package apresentação;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-public class PainelBotoes extends JPanel {
+public class PainelBotoes extends JPanel implements ActionListener {
 
 	private Botao processarProximoInstante = new Botao("Processar Próximo Instante");
 	private Botao lerNovoArquivoDeEntrada = new Botao("Ler Novo Arquivo de Entrada");
@@ -25,12 +27,25 @@ public class PainelBotoes extends JPanel {
 
 	private void adicionarBotoes() {
 
+		processarProximoInstante.addActionListener(this);
 		add(processarProximoInstante);
 		add(lerNovoArquivoDeEntrada);
 		add(gravarRelatorio);
 		add(lerDadosDeOutrosParticipantes);
 		add(gravarArquivoDeSaida);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		if(e.getSource()== processarProximoInstante) {
+			
+			
+			
+		}
+		
+		
 	}
 
 }
