@@ -2,9 +2,10 @@ package javalar;
 
 public class C extends Planetas {
 
+	public static final String DIRETORIO = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\C.png";
+	
 	public C() {
 
-	
 		setVelocidade(10);
 		setHoras(0.1);
 		setPosicao(new int[] { 8, 15 });
@@ -14,6 +15,8 @@ public class C extends Planetas {
 		setxInicial(8);
 		setyInicial(15);
 		setOrbitaPermitida(7);
+		setDiretorioDeSuaImagem(DIRETORIO);
+		
 	}
 
 }

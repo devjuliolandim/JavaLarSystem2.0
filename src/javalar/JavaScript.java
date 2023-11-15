@@ -2,7 +2,9 @@ package javalar;
 
 public class JavaScript extends Planetas {
 
+	public static final String DIRETORIO = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\JavaScript.png";
 
+	
 	public JavaScript() {
 
 		setVelocidade(3);
@@ -15,7 +17,7 @@ public class JavaScript extends Planetas {
 		setxInicial(8);
 		setyInicial(10);
 		setOrbitaPermitida(2);
-		
+		setDiretorioDeSuaImagem(DIRETORIO);
 		
 	}
 

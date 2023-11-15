@@ -2,6 +2,9 @@ package javalar;
 
 public class CPlusPlus extends Planetas {
 
+	public static final String DIRETORIO = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\C++.png";
+
+	
 	public CPlusPlus() {
 
 		setVelocidade(2);
@@ -14,6 +17,7 @@ public class CPlusPlus extends Planetas {
 		setxInicial(8);
 		setyInicial(14);
 		setOrbitaPermitida(6);
+		setDiretorioDeSuaImagem(DIRETORIO);
 	}
 
 }

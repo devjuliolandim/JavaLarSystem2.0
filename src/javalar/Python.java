@@ -2,6 +2,9 @@ package javalar;
 
 public class Python extends Planetas {
 
+	public static final String DIRETORIO = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\Python.png";
+
+	
 	public Python() {
 
 		setPosicao(new int[] {8,9});
@@ -14,6 +17,7 @@ public class Python extends Planetas {
 		setxInicial(8);
 		setyInicial(9);
 		setOrbitaPermitida(1);
+		setDiretorioDeSuaImagem(DIRETORIO);
 	}
 
 

@@ -13,10 +13,20 @@ public abstract class Planetas implements Mover {
 	protected int indicePosAtual = 0;
 	protected int xInicial;
 	protected int yInicial;
-
+	protected String diretorioDeSuaImagem;
+	
 	public Planetas() {
 
 	}
+	
+	public String getDiretorioDeSuaImagem() {
+		return diretorioDeSuaImagem;
+	}
+
+	public void setDiretorioDeSuaImagem(String diretorioDeSuaImagem) {
+		this.diretorioDeSuaImagem = diretorioDeSuaImagem;
+	}
+
 
 	public int getxInicial() {
 		return xInicial;

@@ -12,7 +12,7 @@ public class Janela extends JFrame {
 	public Janela() {
 
 		this.setTitle("Sistema JavaLar");
-		this.setSize(800, 800);
+		this.setSize(1000, 800);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout());

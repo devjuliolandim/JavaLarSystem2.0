@@ -2,6 +2,8 @@ package javalar;
 
 public class CSharp extends Planetas {
 
+	public static final String DIRETORIO = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\C#.png";
+
 	public CSharp() {
 
 		setVelocidade(1);
@@ -14,7 +16,8 @@ public class CSharp extends Planetas {
 		setxInicial(8);
 		setyInicial(13);
 		setOrbitaPermitida(5);
-
+		setDiretorioDeSuaImagem(DIRETORIO);
+		
 	}
 
 }
