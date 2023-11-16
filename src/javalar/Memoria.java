@@ -2,6 +2,14 @@ package javalar;
 
 import java.util.ArrayList;
 
+import planetas.C;
+import planetas.CPlusPlus;
+import planetas.CSharp;
+import planetas.JavaScript;
+import planetas.PHP;
+import planetas.Python;
+import planetas.RubyOnRails;
+
 public class Memoria {
 
 	private ArrayList<Planetas> planetas = new ArrayList<>();

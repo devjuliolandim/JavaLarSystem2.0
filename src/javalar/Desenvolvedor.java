@@ -3,7 +3,7 @@ package javalar;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Desenvolvedor extends OutrosPersonagens implements DesenvolvedorInterface {
+public class Desenvolvedor extends OutrosPersonagens {
 
 	public Desenvolvedor(int pX, int pY) {
 		super(pX, pY);

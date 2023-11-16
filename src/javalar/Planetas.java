@@ -1,6 +1,6 @@
 package javalar;
 
-public abstract class Planetas implements Mover {
+public abstract class Planetas  {
 
 	protected int[] posicao = new int[2];
 	protected int velocidade;
