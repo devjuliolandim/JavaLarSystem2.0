@@ -17,11 +17,11 @@ import javalar.Utilidades;
 
 public class PainelBotoes extends JPanel implements ActionListener {
 
-	private Botao processarProximoInstante = new Botao("Processar Próximo Instante");
-	private Botao lerNovoArquivoDeEntrada = new Botao("Ler Novo Arquivo de Entrada");
-	private Botao gravarRelatorio = new Botao("Gravar Relatório");
-	private Botao lerDadosDeOutrosParticipantes = new Botao("Ler Dados de Outros Participantes");
-	private Botao gravarArquivoDeSaida = new Botao("Gravar Arquivo de Saída");
+	private Botao processarProximoInstante;
+	private Botao lerNovoArquivoDeEntrada;
+	private Botao gravarRelatorio;
+	private Botao lerDadosDeOutrosParticipantes;
+	private Botao gravarArquivoDeSaida;
 
 	Memoria memoria;
 
@@ -36,15 +36,29 @@ public class PainelBotoes extends JPanel implements ActionListener {
 		setPreferredSize(new Dimension(250, 1000));
 		setLayout(new GridLayout(5, 1));
 
+		instanciarBotoes();
 		adicionarBotoes();
 
 	}
 
+	private void instanciarBotoes() {
+		 
+		processarProximoInstante = new Botao("Processar Próximo Instante");
+		lerNovoArquivoDeEntrada = new Botao("Ler Novo Arquivo de Entrada");
+		gravarRelatorio = new Botao("Gravar Relatório");
+		lerDadosDeOutrosParticipantes = new Botao("Ler Dados de Outros Participantes");
+		gravarArquivoDeSaida = new Botao("Gravar Arquivo de Saída");
+		
+	}
+	
 	private void adicionarBotoes() {
 
 		processarProximoInstante.addActionListener(this);
 		add(processarProximoInstante);
+		
+		lerNovoArquivoDeEntrada.addActionListener(this);
 		add(lerNovoArquivoDeEntrada);
+		
 		add(gravarRelatorio);
 		add(lerDadosDeOutrosParticipantes);
 		add(gravarArquivoDeSaida);
@@ -73,8 +87,19 @@ public class PainelBotoes extends JPanel implements ActionListener {
 			painelPlanetas.revalidate();
 			painelPlanetas.repaint();
 
+		} else if(e.getSource() == lerNovoArquivoDeEntrada) {
+			
+			new FuncaoDeCadaBotao().selecionarArquivoDeInstantes();
+			
+			
 		}
 
 	}
 
+	
+	
+	
+	
+	
+	
 }
