@@ -10,6 +10,7 @@ public class Coordenada extends JPanel {
 
 	
 	private JLabel parOrdenado;
+	private JLabel imagem;
 	
 	public Coordenada(int x, int y) {
 	
@@ -27,6 +28,16 @@ public class Coordenada extends JPanel {
 		add(parOrdenado);
 		
 	}
+
+	public JLabel getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(JLabel imagem) {
+		this.imagem = imagem;
+		add(this.imagem);
+	}
+	
 	
 	
 }

@@ -25,11 +25,11 @@ public class PainelBotoes extends JPanel implements ActionListener {
 
 	Memoria memoria;
 
-	PainelPlanetas exibir;
+	PainelPlanetas painelPlanetas;
 
-	public PainelBotoes(Memoria memoria, PainelPlanetas exibir) {
+	public PainelBotoes(Memoria memoria, PainelPlanetas painelPlanetas) {
 
-		this.exibir = exibir;
+		this.painelPlanetas = painelPlanetas;
 		this.memoria = memoria;
 
 		setBackground(Color.WHITE);
@@ -58,17 +58,21 @@ public class PainelBotoes extends JPanel implements ActionListener {
 
 			for (Planetas planetas : memoria.getPlanetas()) {
 
+				for (Coordenada coordenada : painelPlanetas.getCoordenadasOcupadas()) {
+
+					coordenada.remove(coordenada.getImagem());
+
+				}
+
 				planetas.mover(1);
 
 			}
 
-			exibir.adicionarImagens();
-			
-			exibir.revalidate();
-			
-			exibir.repaint();
-			
-			
+			painelPlanetas.adicionarImagens();
+
+			painelPlanetas.revalidate();
+			painelPlanetas.repaint();
+
 		}
 
 	}
