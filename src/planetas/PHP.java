@@ -1,6 +1,6 @@
 package planetas;
 
-import javalar.Planetas;
+import model.Planetas;
 
 public class PHP extends Planetas {
 

@@ -1,6 +1,6 @@
 package planetas;
 
-import javalar.Planetas;
+import model.Planetas;
 
 public class CPlusPlus extends Planetas {
 
