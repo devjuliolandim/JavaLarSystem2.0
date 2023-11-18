@@ -38,9 +38,6 @@ public class FuncaoDeCadaBotao {
 
 					planeta.mover(instantes);
 
-					// TESTE PARA VER SE OS PLANETAS ESTÃO MOVENDO
-					System.out.println(
-							planeta.getNome() + "(" + planeta.getPosicaoX() + ", " + planeta.getPosicaoY() + ")");
 
 				} catch (NumberFormatException e) {
 					e.printStackTrace();
@@ -75,8 +72,6 @@ public class FuncaoDeCadaBotao {
 			File arquivoSelecionado = fileChooser.getSelectedFile();
 
 			String diretorioDoArquivo = arquivoSelecionado.getAbsolutePath();
-
-			System.out.println("Arquivo selecionado: " + arquivoSelecionado);
 
 			return new LerDadosDoArquivo().lerDadosDoArquivo(diretorioDoArquivo);
 

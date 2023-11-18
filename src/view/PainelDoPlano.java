@@ -23,7 +23,7 @@ public class PainelDoPlano extends JPanel {
 	private static final String DIRETORIO_IMAGEM_JAVA = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Foto dos Planetas\\Java.png";
 	private static final String DIRETORIO_IMAGEM_BUG = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Bugs e Devs\\Bug.png";
 	private static final String DIRETORIO_IMAGEM_DEV = "C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Bugs e Devs\\Desenvolvedor.jpg";
-
+	
 	private Coordenada[][] coordenadas;
 	private ArrayList<Coordenada> coordenadasOcupadasPorPlanetas = new ArrayList<>();
 	private ArrayList<Coordenada> coordenadasOcupadasPorBugs = new ArrayList<>();
@@ -41,6 +41,7 @@ public class PainelDoPlano extends JPanel {
 
 		this.memoria = memoria;
 
+		
 		setBorder(new LineBorder(Color.gray, 5));
 		setLayout(new GridLayout(TAMANHO_DO_GRID, TAMANHO_DO_GRID));
 
@@ -88,8 +89,8 @@ public class PainelDoPlano extends JPanel {
 			int x, y;
 
 			do {
-				x = random.nextInt(15) + 1;
-				y = random.nextInt(15) + 1;
+				x = random.nextInt(15);
+				y = random.nextInt(15);
 
 			} while (verificarCoordenadaOcupada(x, y));
 
@@ -107,8 +108,8 @@ public class PainelDoPlano extends JPanel {
 			int x, y;
 
 			do {
-				x = random.nextInt(15) + 1;
-				y = random.nextInt(15) + 1;
+				x = random.nextInt(15);
+				y = random.nextInt(15);
 
 			} while (verificarCoordenadaOcupada(x, y));
 
@@ -181,6 +182,7 @@ public class PainelDoPlano extends JPanel {
 	}
 
 	private void addBugs(int x, int y) {
+
 		if (coordenadas[x][y] != null) {
 			imagem = new ImageIcon(DIRETORIO_IMAGEM_BUG);
 

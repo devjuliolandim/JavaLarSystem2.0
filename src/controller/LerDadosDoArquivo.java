@@ -34,17 +34,6 @@ public class LerDadosDoArquivo {
 
 		}
 		
-		//TESTE : VER SE ESTÁ LENDO O ARQUIVO DIREITO 
-		
-		for(String[] info: informacoes) {
-			
-			for(String campo: info) {
-				
-				System.out.print(campo + " ");
-			}
-			
-			System.out.println();
-		}
 
 		return informacoes;
 	}

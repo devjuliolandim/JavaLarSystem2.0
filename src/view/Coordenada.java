@@ -16,12 +16,14 @@ public class Coordenada extends JPanel {
 	
 	public Coordenada(int posX, int posY) {
 	
-		this.setBorder(new LineBorder(Color.gray, 2));
+		this.setBorder(new LineBorder(Color.gray, 1));
 		this.setOpaque(false);
+		
+		
 		this.eixoX= posX;
 		this.eixoY = posY;
 		
-		definirCoordenada(posX, posY);
+		//definirCoordenada(posX, posY);
 		
 	}
 	

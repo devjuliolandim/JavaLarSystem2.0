@@ -87,6 +87,7 @@ public class PainelBotoes extends JPanel implements ActionListener {
 		} else if (e.getSource() == lerNovoArquivoDeEntrada) {
 
 			infosDoArquivoSelecionado = funcaoDeCadaBotao.lerNovoArquivoDeEntrada();
+			
 
 		}
 
