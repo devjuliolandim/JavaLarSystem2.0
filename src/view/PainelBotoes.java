@@ -25,10 +25,9 @@ public class PainelBotoes extends JPanel implements ActionListener {
 	private Botao lerDadosDeOutrosParticipantes;
 	private Botao gravarArquivoDeSaida;
 	private FuncaoDeCadaBotao funcaoDeCadaBotao = new FuncaoDeCadaBotao();
-	
-	
+
 	private List<String[]> infosDoArquivoSelecionado;
-	
+
 	private Memoria memoria;
 
 	private PainelDoPlano painelDoPlano;
@@ -46,26 +45,25 @@ public class PainelBotoes extends JPanel implements ActionListener {
 		adicionarBotoes();
 
 	}
-	
 
 	private void instanciarBotoes() {
-		 
+
 		processarProximoInstante = new Botao("Processar Próximo Instante");
 		lerNovoArquivoDeEntrada = new Botao("Ler Novo Arquivo de Entrada");
 		gravarRelatorio = new Botao("Gravar Relatório");
 		lerDadosDeOutrosParticipantes = new Botao("Ler Dados de Outros Participantes");
 		gravarArquivoDeSaida = new Botao("Gravar Arquivo de Saída");
-		
+
 	}
-	
+
 	private void adicionarBotoes() {
 
 		processarProximoInstante.addActionListener(this);
 		add(processarProximoInstante);
-		
+
 		lerNovoArquivoDeEntrada.addActionListener(this);
 		add(lerNovoArquivoDeEntrada);
-		
+
 		add(gravarRelatorio);
 		add(lerDadosDeOutrosParticipantes);
 		add(gravarArquivoDeSaida);
@@ -76,35 +74,22 @@ public class PainelBotoes extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == processarProximoInstante) {
-
 			
-
-			
-			for(Coordenada coordenada: painelDoPlano.getCoordenadasOcupadas()) {
+			funcaoDeCadaBotao.processarProximoInstante(infosDoArquivoSelecionado, memoria);
+			painelDoPlano.adicionarImagensDosBugs(funcaoDeCadaBotao.getQuantidadeDeBugs());	
+			painelDoPlano.adicionarImagemDosDevs(funcaoDeCadaBotao.getQuantidadeDeDevs());
+		
+			for (Coordenada coordenada : painelDoPlano.getCoordenadasOcupadasPorPlanetas()) {
 				coordenada.remove(coordenada.getImagem());
 			}
-
-			funcaoDeCadaBotao.processarProximoInstante(infosDoArquivoSelecionado, memoria);	
 			painelDoPlano.adicionarImagensDosPlanetas();
-			painelDoPlano.revalidate();
-			painelDoPlano.repaint();
-			
-			
 
-		} else if(e.getSource() == lerNovoArquivoDeEntrada) {
-			
-			
+		} else if (e.getSource() == lerNovoArquivoDeEntrada) {
+
 			infosDoArquivoSelecionado = funcaoDeCadaBotao.lerNovoArquivoDeEntrada();
-			
-			
+
 		}
 
 	}
 
-	
-	
-	
-	
-	
-	
 }

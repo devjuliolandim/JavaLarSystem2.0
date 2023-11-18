@@ -11,17 +11,31 @@ public class Coordenada extends JPanel {
 	
 	private JLabel parOrdenado;
 	private JLabel imagem;
+	private int eixoX;
+	private int eixoY;
 	
-	public Coordenada(int x, int y) {
+	public Coordenada(int posX, int posY) {
 	
 		this.setBorder(new LineBorder(Color.gray, 2));
 		this.setOpaque(false);
+		this.eixoX= posX;
+		this.eixoY = posY;
 		
-		definirCoordenada(x, y);
+		definirCoordenada(posX, posY);
 		
 	}
 	
+	public int getEixoX() {
+		return eixoX;
+	}
+
+	public int getEixoY() {
+		return eixoY;
+	}
+	
+	
 	private void definirCoordenada(int x, int y) {
+		
 		
 		parOrdenado = new JLabel("("+ y + ", " + x + ")");
 		parOrdenado.setBackground(Color.black);
@@ -34,10 +48,23 @@ public class Coordenada extends JPanel {
 	}
 
 	public void setImagem(JLabel imagem) {
-		this.imagem = imagem;
-		add(this.imagem);
+		
+	    // Defina a nova imagem
+	   this.imagem = imagem;
+
+	    // Adicione a nova imagem apenas se não for nula
+	    if (this.imagem != null) {
+	        add(this.imagem);
+	    }
+
+	    // Revalide e repinte o painel para refletir as mudanças
+	    revalidate();
+	    repaint();
 	}
+
 	
+
+
 	
 	
 }

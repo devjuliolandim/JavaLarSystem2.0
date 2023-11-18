@@ -11,6 +11,17 @@ import model.Planetas;
 
 public class FuncaoDeCadaBotao {
 
+	public int quantidadeDeBugs;
+	public int quantidadeDeDevs;
+
+	public int getQuantidadeDeBugs() {
+		return quantidadeDeBugs;
+	}
+
+	public int getQuantidadeDeDevs() {
+		return quantidadeDeDevs;
+	}
+
 	public void processarProximoInstante(List<String[]> infos, Memoria memoria) {
 
 		if (!infos.isEmpty()) {
@@ -21,9 +32,6 @@ public class FuncaoDeCadaBotao {
 
 				try {
 
-					
-					
-					
 					int instantes = Integer.parseInt(linha[i]);
 
 					Planetas planeta = memoria.getPlanetas().get(i - 1);
@@ -39,14 +47,10 @@ public class FuncaoDeCadaBotao {
 				}
 
 			}
-			
-			//CRIAÇÃO DE BUGS E DEVS
-			int quantidadeDeDevs = Integer.parseInt(linha[linha.length-1]);
-			int quantidadeDeBugs = Integer.parseInt(linha[linha.length-2]);
-			
-			
-			
-			
+
+			// CRIAÇÃO DE BUGS E DEVS
+			quantidadeDeDevs = Integer.parseInt(linha[linha.length - 1]);
+			quantidadeDeBugs = Integer.parseInt(linha[linha.length - 2]);
 
 		} else {
 
@@ -58,6 +62,9 @@ public class FuncaoDeCadaBotao {
 	public List<String[]> lerNovoArquivoDeEntrada() {
 
 		JFileChooser fileChooser = new JFileChooser();
+
+		fileChooser.setCurrentDirectory(new File(
+				"C:\\Users\\Júlio César\\Desktop\\FACULDADE\\2º SEMESTRE\\TÉCNICAS DE PROGRAMAÇÃO\\JavaLar\\Arquivos de Instantes"));
 
 		fileChooser.setFileFilter(new FileNameExtensionFilter("csv", "csv"));
 
